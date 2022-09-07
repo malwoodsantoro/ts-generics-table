@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Table from "./components/Table";
+import { data } from "./sample-data";
+import { HeaderInfo } from "./HeaderInfo";
+import { Data } from './Data'
+
+const headerData: HeaderInfo<Data>[] = [
+  {
+    key: "userId",
+    header: "User ID",
+    width: 150,
+  },
+  {
+    key: "title",
+    header: "Title",
+  },
+  {
+    key: "completed",
+    header: "Is completed?",
+  },
+];
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Table headerData={headerData} data={data} />
     </div>
   );
 }
