@@ -3,7 +3,7 @@ import "./App.css";
 import Table from "./components/Table";
 import { data } from "./sample-data";
 import { HeaderInfo } from "./HeaderInfo";
-import { Data } from './Data'
+import { Data } from "./Data";
 
 const headerData: HeaderInfo<Data>[] = [
   {
@@ -21,13 +21,12 @@ const headerData: HeaderInfo<Data>[] = [
   },
 ];
 
-
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Table headerData={headerData} data={data} />
     </div>
   );
-}
+};
 
 export default App;
